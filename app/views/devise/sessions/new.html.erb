@@ -1,0 +1,23 @@
+<h2>Bem-Vindo ao Dailys</h2>
+<p>Entre com seu email e sua senha para preencher o formulário.</p>
+<p>Existem dois formulários.</p>
+<p>Formulário das manhãs é respondido antes de realizar as atividades.</p>
+<p>Formulário das tardes é respondido no final do expediênte.</p>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
