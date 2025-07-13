@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.1'
+ruby '2.6.10'
 
 # Permissões
 gem 'cancancan', '~> 1.15.0'
 gem 'remotipart', github: 'mshibuya/remotipart'
 # Administração do sistema
-gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'rails_admin', '~> 2.0.1'
 gem 'rails_admin_rollincode', '~> 1.0'
 # Autenticação
 gem 'devise'
@@ -23,6 +23,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+
+# Fix mimemagic dependency issue
+gem 'mimemagic', '~> 0.3.10'
+
+# Fix nokogiri build issue no macOS/Ruby 2.6+
+gem 'nokogiri', '~> 1.13.10'
+
+# Fix nio4r build issue on Ruby 2.6+
+gem 'nio4r', '~> 2.5'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
