@@ -7,6 +7,7 @@
     <tr>
       <th>Answer1</th>
       <th>Answer2</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= morning_form.answer1 %></td>
         <td><%= morning_form.answer2 %></td>
+        <td><%= morning_form.user&.name %></td>
         <td><%= link_to 'Show', morning_form %></td>
         <td><%= link_to 'Edit', edit_morning_form_path(morning_form) %></td>
         <td><%= link_to 'Destroy', morning_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
