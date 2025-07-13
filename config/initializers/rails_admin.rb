@@ -1,6 +1,6 @@
 RailsAdmin.config do |config|
 
-  config.main_app_name = ["Dailys", ""]
+  config.main_app_name = ["Daily Control", ""]
 
   ### Popular gems integration
 
@@ -11,10 +11,7 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_user)
 
   ## == Cancan ==
-  config.authorize_with do
-    current_user ||= User.new
-    Ability.new(current_user)
-  end
+config.authorize_with :cancancan
 
   ## == Pundit ==
   # config.authorize_with :pundit

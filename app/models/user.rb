@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable
   belongs_to :team
+
+  def admin?
+    self.admin == true
+  end
 end

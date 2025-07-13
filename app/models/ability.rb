@@ -8,19 +8,20 @@ class Ability
     #   user ||= User.new # guest user (not logged in)
     
     # Abilitando permissões de Administrador e usuários
+    if user.persisted?
+      can :dashboard, :all
+      can :read, :dashboard
+      can :access, :rails_admin
       if user.admin?
-        can :dashboard
-        can :access, :rails_admin
         can :read, MorningForm
         can :read, AfternoonForm
         can :manage, Team
         can :manage, User  
       else
-        can :dashboard
-        can :access, :rails_admin
         can [:read, :create], MorningForm, user_id: user.id
         can [:read, :create], AfternoonForm, user_id: user.id
       end
+    end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

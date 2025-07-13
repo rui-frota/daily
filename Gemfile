@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.10'
 
 # Permissões
-gem 'cancancan', '~> 1.15.0'
 gem 'remotipart', github: 'mshibuya/remotipart'
 # Administração do sistema
+gem 'cancancan', '~> 3.2.1'
 gem 'rails_admin', '~> 2.0.1'
 gem 'rails_admin_rollincode', '~> 1.0'
 # Autenticação

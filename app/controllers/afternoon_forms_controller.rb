@@ -1,4 +1,5 @@
 class AfternoonFormsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_afternoon_form, only: [:show, :edit, :update, :destroy]
 
   # GET /afternoon_forms
