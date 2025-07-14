@@ -18,8 +18,10 @@ class Ability
         can :manage, Team
         can :manage, User  
       else
-        can [:read, :create], MorningForm, user_id: user.id
-        can [:read, :create], AfternoonForm, user_id: user.id
+        can :create, MorningForm
+        can :create, AfternoonForm
+        can [:read, :update, :destroy], MorningForm, user_id: user.id
+        can [:read, :update, :destroy], AfternoonForm, user_id: user.id
       end
     end
     #

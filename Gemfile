@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.10'
 
+# Para geração de dados fake em seeds e testes
+gem 'faker'
 # Permissões
 gem 'remotipart', github: 'mshibuya/remotipart'
 # Administração do sistema

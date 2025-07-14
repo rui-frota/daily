@@ -1,0 +1,7 @@
+<%# app/views/rails_admin/main/_navigation.html.erb %>
+<%= render partial: 'rails_admin/main/navigation', locals: { current_user: current_user } %>
+<% if current_user && current_user.email.present? %>
+  <div style="float:right; margin-right: 20px; color: #fff; font-weight: bold;">
+    <i class="fa fa-user"></i> <%= current_user.email %>
+  </div>
+<% end %>

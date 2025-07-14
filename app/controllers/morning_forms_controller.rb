@@ -26,6 +26,7 @@ class MorningFormsController < ApplicationController
   # POST /morning_forms.json
   def create
     @morning_form = MorningForm.new(morning_form_params)
+    @morning_form.user = current_user
 
     respond_to do |format|
       if @morning_form.save
@@ -70,6 +71,6 @@ class MorningFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def morning_form_params
-      params.require(:morning_form).permit(:answer1, :answer2, :user_id)
+      params.require(:morning_form).permit(:answer1, :answer2)
     end
 end

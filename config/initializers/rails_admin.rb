@@ -1,5 +1,23 @@
 RailsAdmin.config do |config|
 
+  config.model 'MorningForm' do
+    edit do
+      exclude_fields :user
+    end
+    create do
+      exclude_fields :user
+    end
+  end
+
+  config.model 'AfternoonForm' do
+    edit do
+      exclude_fields :user
+    end
+    create do
+      exclude_fields :user
+    end
+  end
+
   config.main_app_name = ["Daily Control", ""]
 
   ### Popular gems integration

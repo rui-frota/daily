@@ -26,6 +26,7 @@ class AfternoonFormsController < ApplicationController
   # POST /afternoon_forms.json
   def create
     @afternoon_form = AfternoonForm.new(afternoon_form_params)
+    @afternoon_form.user = current_user
 
     respond_to do |format|
       if @afternoon_form.save
@@ -70,6 +71,6 @@ class AfternoonFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def afternoon_form_params
-      params.require(:afternoon_form).permit(:answer1, :answer2, :user_id)
+      params.require(:afternoon_form).permit(:answer1, :answer2)
     end
 end
